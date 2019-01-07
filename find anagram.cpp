@@ -8,7 +8,7 @@ int main()
 	int t,i=0;
 	string str;
 	cin>>t;
-	while(i<t)
+	while(i<=t+1)
     {
     	int n=0,m=0;
     	string s1[100],s2[100];
@@ -25,7 +25,7 @@ int main()
 		 {
 		  if(str[j]!=' ')
 		  {
-		 	abc+=tolower(str[j]);
+		 	abc+=str[j];
 		  } 
 		 }
 		 sort(abc.begin(),abc.end());
@@ -56,10 +56,26 @@ int main()
 		  }
 	     }	
 	    }
-	    for(int j=0;j<m;j++)
+	    for(int j=0;j<m-1;j++)
+	    {
+	     for(int k=j+1;k<m;k++)
+	     {
+		  if(s3[k]>s3[j])
+		  {
+			str=s3[j];
+			s3[j]=s3[k];
+			s3[k]=str;
+		  }
+	     }	
+	    }
+	    for(int j=m-1;j>=0;j--)
 	    {
 	    	cout<<s3[j]<<"\n";
 	    }
+	    if(i>1)
+	    {
+	     cout<<"\n";
+	    } 
 	    i++;
 	}  
 	return 0;
