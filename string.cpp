@@ -23,6 +23,20 @@ int main()
 		s2[i]=str;
 		i++;
 	}
-	for()
+	for(int j=0;j<=i;j++)
+	{
+	  for(int k=0;k<=i;k++)
+	  {
+		if(j!=k && s2[j]==s2[k])
+		{
+			s1[j]="123";
+			s1[k]="123";
+		}
+	  }	
+	}
+	for(int j=0;j<=i;j++)
+	{
+		cout<<s1[j]<<"\n";
+	}
 	return 0;
 }
