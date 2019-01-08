@@ -25,23 +25,57 @@ int main()
 		 if(m%2==0)
 		 {
 		  a[m][1]=d;
-		  a[m][0]=e;
+		  if(e<=n)
+		  {
+		   a[m][0]=e;
+		  } 
 		  d--;
 		  e++;
 		 }
 		 else
 		 {
 		  a[m][0]=d;
-		  a[m][1]=e;
+		  if(e<=n)
+		  {
+		   a[m][1]=e;
+		  } 
 		  d--;
 		  e++;
 		 }
 		}
+		int i=0;
 		for(int m=0;m<2*c;m++)
 		{
 			if(n>0)
 			{
-				if(a[m][0]==)
+				if(m%2==0)
+				{
+					i++;
+					cout<<"Sheet "<<i<<", front: ";
+				}
+				else
+				{
+				    cout<<"Sheet "<<i<<", back: ";	
+				}
+				if(a[m][0]==0)
+				{
+					cout<<"Blank, ";
+				}
+				else
+				{
+					cout<<a[m][0]<<", ";
+					n--;
+				}
+				if(a[m][1]==0)
+				{
+					cout<<"Blank";
+				}
+				else
+				{
+					cout<<a[m][1];
+					n--;
+				}
+				cout<<"\n";
 			}
 		}
 
