@@ -10,64 +10,41 @@ int main()
 		{
 			break;
 		}
-		int a,b,c,d,e=1,i=1;
+		int b,c;
 		b=n%4;
 		c=n/4;
 		if(b!=0)
 		{
 			c=c+1;
 		}
-		d=abs(4*c-n);
-		while(i<=c)
+		int d=2*c;
+		int e=d+1;
+		int a[60][2]={0};
+		for(int m=2*c-1;m>=0;m--)
 		{
-			cout<<"Printing order for "<<i<<" pages:\n";
-			if(e%2!=0)
-			{
-			    if(d>0)
-			    {
-			  	
-			    }
-			    else
-			    {
-			  	
-			    }
-			}
-			else
-			{
-			    if(d>0)
-			    {
-			  	
-			    }
-			    else
-			    {
-			  	
-			    }	
-			}
-			cout<<"Printing order for "<<i<<" pages:\n";
-			if(e%2!=0)
-			{
-			    if(d>0)
-			    {
-			  	
-			    }
-			    else
-			    {
-			  	
-			    }
-			}
-			else
-			{
-			    if(d>0)
-			    {
-			  	
-			    }
-			    else
-			    {
-			  	
-			    }	
-			}
-			i++;
+		 if(m%2==0)
+		 {
+		  a[m][1]=d;
+		  a[m][0]=e;
+		  d--;
+		  e++;
+		 }
+		 else
+		 {
+		  a[m][0]=d;
+		  a[m][1]=e;
+		  d--;
+		  e++;
+		 }
 		}
+		for(int m=0;m<2*c;m++)
+		{
+			if(n>0)
+			{
+				if(a[m][0]==)
+			}
+		}
+
 	}
 
 	return 0;
