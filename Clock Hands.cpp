@@ -30,7 +30,14 @@ int main()
 		a=a+b;
 		a=(a*360)/12;
 		b=(b*360);
-		c=a-b;
+		if(a>b)
+		{
+		 c=a-b;
+		}
+		else
+		{
+		 c=b-a;
+		}
 		if(c<=180)
 		{
 		 printf("%.3lf",c);
