@@ -20,6 +20,7 @@ int main()
 		int d=2*c;
 		int e=d+1;
 		int a[60][2]={0};
+		cout<<"Printing order for "<<n<<" pages:\n";
 		for(int m=2*c-1;m>=0;m--)
 		{
 		 if(m%2==0)
