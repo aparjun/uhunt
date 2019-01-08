@@ -56,7 +56,7 @@ int main()
 				}
 				else
 				{
-				    cout<<"Sheet "<<i<<", back: ";	
+				    cout<<"Sheet "<<i<<", back : ";	
 				}
 				if(a[m][0]==0)
 				{
