@@ -6,10 +6,10 @@ using namespace std;
 int main() 
 {
 	int t,i=0;
-	string str;
 	cin>>t;
 	while(i<=t+1)
     {
+    	string str;
     	int n=0,m=0;
     	string s1[100],s2[100];
     	string abc="";
@@ -39,6 +39,7 @@ int main()
 	     {
 		  if(s2[j]!="" && s2[j]==s2[k])
 		  {
+		  	s3[m]="";
 		  	if(s1[j]>s1[k])
 		  	{
 			 s3[m]+=s1[k];
