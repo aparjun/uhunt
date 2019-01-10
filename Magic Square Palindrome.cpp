@@ -26,9 +26,18 @@ int main()
 	  b=n-(int)sqrt(a);
 	  if(b!=0 || a==0 && i>0)
 	  {
-	  	cout<<"Case #";
-	  	cout<<i<<":\n";
-	  	cout<<"No magic :("<<"\n";
+	  	if(a==0)
+	  	{
+	  	 cout<<"Case #";
+	  	 cout<<i<<":\n";
+	  	 cout<<a<<"\n";
+	  	}
+	  	else
+	  	{
+	  	 cout<<"Case #";
+	  	 cout<<i<<":\n";
+	  	 cout<<"No magic :("<<"\n";
+	  	}
 	  }
 	  else
 	  {
