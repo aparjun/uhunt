@@ -5,19 +5,20 @@ using namespace std;
 
 int main() 
 {
-	int t,i=0;
+	string s;
+	int t,i=1;
 	cin>>t;
+	getline(cin,s);
 	while(i<=t)
 	{
-	  int f=0;	
 	  double n=0,a=0,b=0;	
-	  string str,abc;	
+	  string str,tmp,abc="";	
 	  getline(cin,str);	 
 	  for(int j=0;j<str.size();j++)
 	  {
 	  	if(isalpha(str[j]))
 	  	{
-	     abc+=tolower(str[j]);
+	     abc+=str[j];
 	     a++;
 	  	}
 	  }
@@ -41,41 +42,59 @@ int main()
 	  			a--;
 	  		}
 	  	}
-	  	for(int p=0;p<s/2;p++)
+	    for(int j=0;j<s;j++)
 	  	{
-	  	  for(int k=s-1;k>=p;k--)
-	  	  {
-	       if(a1[p][k]!=a1[k][p])
-	       {
-	       	f=1;
-	       }
-	  	  }	
-	    }
-	    for(int p=s-1;p>=s/2;p--)
+	  		for(int k=0;k<s;k++)
+	  		{
+	  			tmp+=a1[k][j];
+	  		}
+	  	}
+	  	if(tmp!=abc)
 	  	{
-	  	  for(int k=s-1;k>=p;k--)
-	  	  {
-	       if(a1[p][k]!=a1[k][p])
-	       {
-	       	f=1;
-	       }
-	  	  }	
-	    }
-	    if(i>0)
-	    {
-	     if(f==0)
-	     {
-	     cout<<"Case #";
-	  	 cout<<i<<":\n";
-	  	 cout<<s<<"\n";	
-	     }
-	     else
-	     {
-	     cout<<"Case #";
+	  	 cout<<"Case #";
 	  	 cout<<i<<":\n";
 	  	 cout<<"No magic :("<<"\n";	
-	     }
-	    } 
+	  	}
+	  	else
+	  	{
+	  	  tmp="";	
+	  	  for(int j=s-1;j>=0;j--)
+	  	  {
+	  		for(int k=s-1;k>=0;k--)
+	  		{
+	  			tmp+=a1[j][k];
+	  		}
+	  	  }	
+	  	  if(tmp!=abc)
+	  	  {
+	  	  	cout<<"Case #";
+	  	    cout<<i<<":\n";
+	  	    cout<<"No magic :("<<"\n";
+	  	  }
+	  	  else
+	  	  {
+	  	   tmp="";
+	  	   for(int j=s-1;j>=0;j--)
+	  	   {
+	  		for(int k=s-1;k>=0;k--)
+	  		{
+	  			tmp+=a1[k][j];
+	  		}
+	  	   }		
+	  	   if(tmp!=abc)
+	  	   {
+	  	   	cout<<"Case #";
+	  	    cout<<i<<":\n";
+	  	    cout<<"No magic :("<<"\n";
+	  	   }
+	  	   else
+	  	   {
+	  	   	cout<<"Case #";
+	  	    cout<<i<<":\n";
+	  	    cout<<s<<"\n";
+	  	   }
+	  	  }
+	  	}
 	  }
 	  i++;
 	}
