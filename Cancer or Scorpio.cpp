@@ -61,57 +61,66 @@ int main()
   				}
   			}
     }
-    cout<<i<<" "<<mo<<"/"<<da<<"/"<<ye<<" ";
+    cout<<i<<" ";
+    if(mo<10)
+    {
+    	cout<<"0";
+    }
+    cout<<mo<<"/";
+    if(da<10)
+    {
+    	cout<<"0";
+    }
+    cout<<da<<"/"<<ye<<" ";
     if((mo==1 && da>=21) || (mo==2 && da<=19))
     {
-    	cout<<"Aquarius\n";
+    	cout<<"aquarius\n";
     }
     if((mo==2 && da>=20) || (mo==3 && da<=20))
     {
-    	cout<<"Pisces\n";
+    	cout<<"pisces\n";
     }
     if((mo==3 && da>=21) || (mo==4 && da<=20))
     {
-    	cout<<"Aries\n";
+    	cout<<"aries\n";
     }
     if((mo==4 && da>=21) || (mo==5 && da<=21))
     {
-    	cout<<"Taurus\n";
+    	cout<<"taurus\n";
     }
     if((mo==5 && da>=22) || (mo==6 && da<=21))
     {
-    	cout<<"Gemini\n";
+    	cout<<"gemini\n";
     }
     if((mo==6 && da>=22) || (mo==7 && da<=22))
     {
-    	cout<<"Cancer\n";
+    	cout<<"cancer\n";
     }
     if((mo==7 && da>=23) || (mo==8 && da<=21))
     {
-    	cout<<"Leo\n";
+    	cout<<"leo\n";
     }
     if((mo==8 && da>=22) || (mo==9 && da<=23))
     {
-    	cout<<"Virgo\n";
+    	cout<<"virgo\n";
     }
     if((mo==9 && da>=24) || (mo==10 && da<=23))
     {
-    	cout<<"Libra\n";
+    	cout<<"libra\n";
     }
     if((mo==10 && da>=24) || (mo==11 && da<=22))
     {
-    	cout<<"Scorpio\n";
+    	cout<<"scorpio\n";
     }
     if((mo==11 && da>=23) || (mo==12 && da<=22))
     {
-    	cout<<"Sagittarius\n";
+    	cout<<"sagittarius\n";
     }
     if((mo==12 && da>=23) || (mo==1 && da<=20))
     {
-    	cout<<"Capricorn\n";
+    	cout<<"capricorn\n";
     }
     i++;
   } 
 	return 0;
 }
-
