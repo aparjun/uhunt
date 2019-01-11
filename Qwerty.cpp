@@ -53,6 +53,12 @@ char convert(char a)
 		return ']';
 	case 'S':
 		return 'A';
+	case 'A':
+		return 'A';
+	case 'Q':
+		return 'Q';
+	case 'Z':
+		return 'Z';
 	case 'D':
 		return 'S';
 	case 'F':
