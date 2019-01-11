@@ -16,6 +16,7 @@ int main()
 	}
 	while(cin>>str && str!="XXXXXX")
 	{
+		int b=0;
 		string s3[200];
 	    sort(str.begin(),str.end());
 	    for(int j=0;j<a;j++)
@@ -37,13 +38,19 @@ int main()
 	      }	
 	     }
 	    }
-	    for(int j=0;j<100;j++)
+	    for(int j=100;j>=0;j--)
 	    { 
 	  	 if(s3[j]!="")
 	  	 {
 	  	   cout<<s3[j]<<"\n";
+	  	   b++;
 	  	 }
 	    }
+	    if(b==0)
+	    {
+	    	cout<<"NOT A VALID WORD\n";
+	    }
+	    cout<<"******\n";
 	}
 	return 0;
 }
