@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string.h>
+
 using namespace std;
 int convert(char a)
 {
@@ -59,26 +61,27 @@ int convert(char a)
 }
 int main() 
 {
-	int t,i=0;
+	int t,i=1;
 	cin>>t;
-	while(i<t)
+	char c[100];
+	cin.getline(c, 100); 
+	while(i<=t)
 	{
 		int n=0;
-		string str;
-		getline(cin,str);
-		for(int j=0;j<str.size();j++)
+		cin.getline(c, 100); 
+		int l=strlen(c);
+		for(int j=0;j<l;j++)
 		{
-		 if(str[j]!=' ')
+		 if(c[j]==' ')
 		 {
 		  n++;
 		 }
 		 else
 		 {
-		  n=n+convert(str[j]);
+		  n=n+convert(c[j]);
 		 }
 		}
-		cout<<"Case #"<<i+1<<
-		cout<<"\n";
+		cout<<"Case #"<<i<<": "<<n<<"\n";
 		i++;
 	}
 	return 0;
