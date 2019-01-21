@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 int main() 
@@ -10,10 +12,9 @@ int main()
      int n,a=0,b=0;
      cin>>n;
      string str,s[n];
-     getline(cin,str);
      for(int j=0;j<n;j++)
      {
-      getline(cin,str);
+      cin>>str;
       if(str=="LEFT")
       {
        s[j]="LEFT";
@@ -26,7 +27,9 @@ int main()
        }
        else
        {
-        a=str[8]-'0';
+       	cin>>str;
+       	cin>>str;
+        a=stoi(str);
         a=a-1;
         s[j]=s[a];
        }
@@ -34,16 +37,16 @@ int main()
      }  
      for(int j=0;j<n;j++)
      {
-     	if(s[j]=="LEFT")
-     	{
-     		b--;
-     	}
-     	else
-     	{
-     		b++;
-     	}
+      if(s[j]=="LEFT")
+      {
+      	b--;
+      }
+      else
+      {
+      	b++;
+      }
      }
-     cout<<b<<"\n";
+    cout<<b<<"\n";
      i++;
    }
 	return 0;
