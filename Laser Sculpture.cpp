@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 int main() 
@@ -11,45 +12,22 @@ int main()
 			break;
 		}
 		cin>>l;
-		int a[l],b[l];
-		int count=0,m=100000;
+		int a[l];
+		int count=0,d=0;
 		for(int j=0;j<l;j++)
 		{
 			cin>>a[j];
-			if(a[j]<m)
-			{
-				m=a[j];
-			}
-			b[j]=h;
 		}
-		for(int j=0;j<m;j++)
+		for(int j=1;j<l;j++)
 		{
-			for(int k=0;k<l;k++)
-			{
-				if(b[k]!=a[k])
-				{
-					b[k]--;
-				}
-			}
-			for(int k=0;k<l;k++)
-			{
-				if(b[k]==a[k])
-				{
-				    if(k==l-1)
-					{
-						count++;
-					}
-					else
-					{
-						if(b[k+1]!=a[k+1])
-						{
-							count+=2;
-						}
-					}
-				}	
-			}
+		    d=a[j]-a[j-1];
+            if(d>0) 
+            {
+                count+=d;
+            }    
 		}
-		cout<<count<<endl;
+		count+=h-a[l-1];
+		cout<<count<<"\n";
 	}
 	return 0;
 }
