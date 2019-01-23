@@ -5,6 +5,7 @@ int main()
 {
 	string str;
 	cin>>str;
+	//getting one input due to presentation error
 	int a=0,b=0,c=0,d=0,e=0,f=0,h=0;
 		a=str[str.size()-1]-'0';
 		b=str[str.size()-2]-'0';
