@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 
 int main() 
@@ -8,16 +7,11 @@ int main()
 	cin>>t;
 	while(i<t)
 	{
-		float a,b;
+        int a,b;
 		cin>>a>>b;
-		a=a-1;
-		b=b-1;
 		a=a/3;
 		b=b/3;
-	
-		a=ceil(a);
-		b=ceil(b);
-			cout<<b<<endl;
+			cout<<a*b<<endl;
 		i++;
 	}
 	return 0;
