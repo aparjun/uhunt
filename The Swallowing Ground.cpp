@@ -1,5 +1,4 @@
 #include <iostream>
-#include <math.h>
 using namespace std;
 
 int main()
@@ -8,27 +7,41 @@ int main()
 	cin>>t;
 	while(i<t)
 	{
-		int a,b,c,n,f=0;
+		int a,b,n,f=0;
 		cin>>n;
-		cin>>a;
-		cin>>b;
-		c=abs(a-b);
-		for(int j=0;j<n-1;j++)
+		int ar[n];
+		for(int j=0;j<n;j++)
 		{
-		  cin>>a;
-		  cin>>b;
-		  if(abs(a-b)!=c)
+		  cin>>a>>b;
+		  ar[j]=a-b;
+		  if(ar[j]!=ar[0])
 		  {
-		  	cout<<"no\n\n";
-		  	f++;
-		  	break;
+		  	f=1;
 		  }
 		}
 		if(f==0)
 		{
-			cout<<"yes\n\n";
+			if(i==t-1)
+			{
+			cout<<"yes\n";	
+			}
+			else
+			{
+			cout<<"yes\n\n";	
+			}
 		}
-		
+		else
+		{
+			if(i==t-1)
+			{
+			cout<<"no\n";	
+			}
+			else
+			{
+			cout<<"no\n\n";	
+			}
+			
+		}
 		i++;
 	}
 
