@@ -7,20 +7,33 @@ int main()
 	cin>>t;
 	while(i<=t)
 	{
+		int x,y,z=0;
 		string a,b,c,d;
 		cin>>a>>b>>c>>d;
-	    b=str[3]-'0';	
-	    c=str[4]-'0';
-		a=stod(str);
-		b=b*10;
-		b=b+c;
-		d=b;
-		if(b!=0)
+	    y=c[3]-'0';	
+	    x=c[4]-'0';
+		y=y*10;
+		y=y+x;
+		x=stoi(c);
+		
+		int p,q,u,v;
+		q=a[3]-'0';	
+	    p=a[4]-'0';
+		q=q*10;
+		q=q+p;
+		p=stoi(a);
+		
+		v=b[3]-'0';	
+	    u=b[4]-'0';
+		v=v*10;
+		v=v+u;
+		u=stoi(b);
+		
+		while(1)
 		{
-		 d=60-b;
-		} 
-		b=b/60;
-		a=a+b;
+			
+		}
+		i++;
 	}
 	return 0;
 }
