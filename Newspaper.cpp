@@ -1,4 +1,5 @@
 #include <iostream>
+#include <numeric>
 using namespace std;
 
 int main()
@@ -29,6 +30,7 @@ int main()
 	 {
 	 	br[j]=br[j]*ar[j];
 	 }
+	 cout<<accumulate(br , br+127, 0)<<endl; 
 		i++;
 	}
 	return 0;
