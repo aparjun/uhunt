@@ -6,8 +6,8 @@ int main()
     while(1)
     {
     	int s,b,l,r;
-        int left[100000];
-        int right[100000];
+        int left[1000000];
+        int right[1000000];
         cin>>s>>b;
         if(s==0 && b==0)
         {
