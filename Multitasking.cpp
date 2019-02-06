@@ -16,10 +16,10 @@ int main()
 		for(int j=0;j<n;j++)
 		{
 			cin>>a>>b;
-			for(int i=a;i<=b;i++)
+			for(int i=a+1;i<=b;i++)
 			{
 				ar[i]++;
-				if(ar[i]>1 && i!=a && i!=b)
+				if(ar[i]>1)
 				{
 					f=1;
 					break;
@@ -31,10 +31,10 @@ int main()
 			cin>>a>>b>>c;
 			while(a<1000000)
 			{
-			  for(int i=a;i<=b && i<=1000000;i++)
+			  for(int i=a+1;i<=b && i<=1000000;i++)
 			  {
 				ar[i]++;
-				if(ar[i]>1 && i!=a && i!=b)
+				if(ar[i]>1)
 				{
 					f=1;
 					break;
