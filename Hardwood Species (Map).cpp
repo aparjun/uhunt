@@ -8,11 +8,13 @@ int main()
 	int t;
 	cin>>t;
 	getline(cin,str);
+	getline(cin,str);
 	while(t--)
 	{
+		float p;
 		int n=0;
 		map<string, int>m;
-		while(getline(cin,str));
+		while(getline(cin,str))
 		{
 		 if(str=="")
 		 {
@@ -21,11 +23,19 @@ int main()
 		 m[str]++;
 		 n++;
 		}
-		
-		for(map<string, int>::iterator i=m.begin();i!=m.end();i++)
+		map<string, int>::iterator i;
+		for(i=m.begin();i!=m.end();i++)
 		{
-			cout<<i->first<<" "<<i->second;
+			p=i->second;
+			p=p*100/n;
+			cout<<i->first<<" ";
+			printf("%.4f",p);
+			cout<<"\n";
 		}
+		if(t>0)
+		{
+		 cout<<endl;
+		} 
 	}
 	return 0;
 }
