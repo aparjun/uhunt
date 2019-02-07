@@ -1,42 +1,46 @@
 #include <iostream>
+#include <string>
+#include <sstream>
+
 using namespace std;
 
 int main() 
 {
-    int t,i=0;
+    int t;
     cin>>t;
-    while(i<t)
+    string str;
+    getline(cin,str);
+    getline(cin,str);
+    while(t--)
     {
     	char ch;
-    	int k,l,m,a[1000]={0},b[1000]={0},c[1000]={0};
-    	while(cin>>k)
+    	int k,l,m,a[110]={0},b[110]={0},c[110]={0},d[110][12][1]={0};
+    	while(getline(cin,str) && str.size()>0)
     	{
-    		if(k==null)
-    		{
-    			break;
-    		}
+    		stringstream ss(str);
+	        ss >> k >> l >> m >> ch;
     		a[k]=k;
-    		cin>>l;
-    		cin>>m;
-    		cin>>ch;
     		if(ch=='C')
     		{
     			b[k]++;
-    			c[k]=c[k]+m;
+    			c[k]=c[k]+d[k][l][0]+m;
     		}
     		else
     		{
     			if(ch=='I')
     			{
-    			 c[k]=c[k]+20;	
+    			 d[k][l][0]=d[k][l][0]+20;	
     			}
     		}
     	}
     	for(int j=0;j<100;j++)
     	{
-    		cout<<a[j]<<" "<<b[j]<<" "<<c[j]<<endl;
+    		if(a[j]!=0)
+    		{
+    		 cout<<a[j]<<" "<<b[j]<<" "<<c[j]<<endl;
+    		}
     	}
-    	i++;
+    	cout<<endl;
     }
 	return 0;
 }
