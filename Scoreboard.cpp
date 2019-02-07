@@ -33,13 +33,51 @@ int main()
     			}
     		}
     	}
-    	for(int j=0;j<100;j++)
-    	{
-    		if(a[j]!=0)
-    		{
-    		 cout<<a[j]<<" "<<b[j]<<" "<<c[j]<<endl;
-    		}
-    	}
+    	int temp,flag=1; 
+        for(int i = 1; (i <= 100) && flag; i++)
+        {
+          flag = 0;
+          for (int j=0; j < (100-1); j++)
+          {
+               if (b[j+1] > b[j])      
+               { 
+                    temp = a[j];            
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                    
+                    temp = b[j];            
+                    b[j] = b[j+1];
+                    b[j+1] = temp;
+                    
+                    temp = c[j];            
+                    c[j] = c[j+1];
+                    c[j+1] = temp;
+                    flag = 1;               
+               }
+               if (b[j+1] == b[j] && c[j+1]<c[j])      
+               { 
+                    temp = a[j];            
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                    
+                    temp = b[j];            
+                    b[j] = b[j+1];
+                    b[j+1] = temp;
+                    
+                    temp = c[j];            
+                    c[j] = c[j+1];
+                    c[j+1] = temp;
+                    flag = 1;               
+               }
+          }
+        }
+        for(int j=0;j<100;j++)
+        {
+        	if(a[j]!=0)
+        	{
+        	 cout<<a[j]<<" "<<b[j]<<" "<<c[j]<<endl;
+        	}
+        }
     	cout<<endl;
     }
 	return 0;
