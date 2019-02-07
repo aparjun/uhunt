@@ -22,22 +22,28 @@ int main()
     		a[k]=k;
     		if(ch=='C')
     		{
-    			b[k]++;
-    			c[k]=c[k]+d[k][l][0]+m;
+    			
+    			if(d[k][l][0]>=0)
+    			{
+    				b[k]++;
+    			    c[k]=c[k]+m;
+    				c[k]=c[k]+d[k][l][0];
+    				d[k][l][0]=-1;
+    			}
     		}
     		else
     		{
-    			if(ch=='I')
+    			if(ch=='I' && d[k][l][0]>=0)
     			{
     			 d[k][l][0]=d[k][l][0]+20;	
     			}
     		}
     	}
     	int temp,flag=1; 
-        for(int i = 1; (i <= 100) && flag; i++)
+        for(int i = 1; (i <= 100+1) && flag; i++)
         {
           flag = 0;
-          for (int j=0; j < (100-1); j++)
+          for (int j=0; j < (100); j++)
           {
                if (b[j+1] > b[j])      
                { 
@@ -71,7 +77,7 @@ int main()
                }
           }
         }
-        for(int j=0;j<100;j++)
+        for(int j=0;j<=100;j++)
         {
         	if(a[j]!=0)
         	{
