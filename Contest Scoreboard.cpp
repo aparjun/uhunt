@@ -84,7 +84,10 @@ int main()
         	 cout<<a[j]<<" "<<b[j]<<" "<<c[j]<<endl;
         	}
         }
-    	cout<<endl;
+        if(t>0)
+        {
+    	 cout<<endl;
+        }
     }
 	return 0;
 }
