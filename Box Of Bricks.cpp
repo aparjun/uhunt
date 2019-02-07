@@ -19,8 +19,6 @@ int main()
 			sum=sum+ar[j];
 		}
 		sum=sum/n;
-		cout<<sum;
-		
 		for(int j=0;j<n;j++)
 		{
 			if(ar[j]>sum)
@@ -35,12 +33,12 @@ int main()
 		if(c>d)
 		{
 		 cout<<"Set #"<<i<<"\n";
-		 cout<<"The minimum number of moves is "<<c<<"\n\n";
+		 cout<<"The minimum number of moves is "<<c<<".\n\n";
 		}
 		else
 		{
 		 cout<<"Set #"<<i<<"\n";
-		 cout<<"The minimum number of moves is "<<d<<"\n\n";	
+		 cout<<"The minimum number of moves is "<<d<<".\n\n";	
 		}
 	}
 	return 0;
