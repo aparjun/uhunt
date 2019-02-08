@@ -1,4 +1,6 @@
 #include <iostream>
+#include <set>
+
 using namespace std;
 
 int main() 
@@ -9,7 +11,7 @@ int main()
   {
   	int bat,gr,bl,x,y;
   	cin>>bat>>gr>>bl;
-  	set<int>g,b;
+  	multiset<int>g,b;
   	for(int j=0;j<gr;j++)
   	{
   		cin>>x;
@@ -27,15 +29,19 @@ int main()
   		q=b.begin();
   		if(*p>*q)
   		{
-  			*p=*p-*q;
+  			y=(*p)-(*q);
+  			g.erase(p);	
   			b.erase(q);
+  			g.insert(y);
   		}
   		else
   		{
   			if(*p<*q)
   			{
-  			   *q=*q-*p;
-  			    g.erase(p);	
+  			   y=(*q)-(*p);
+  			   b.erase(q);
+  			   g.erase(p);
+  			   b.insert(y);
   			}
   			else
   			{
@@ -44,6 +50,8 @@ int main()
   			}
   		}
   	}
+  	p=g.begin();
+  	q=b.begin();
   	if(g.empty() && b.empty())
   	{
   		cout<<"green and blue died\n";
@@ -53,6 +61,15 @@ int main()
   		if(g.empty())
   		{
   			cout<<"blue wins\n";
+  			while(q!=b.end())
+  			{
+  				cout<<*q<<"\n";
+  				q++;
+  			}
+  		}
+  		else
+  		{
+  			cout<<"green wins\n";
   			while(p!=g.end())
   			{
   				cout<<*p<<"\n";
@@ -60,6 +77,7 @@ int main()
   			}
   		}
   	}
+  	cout<<endl;
   }
 	return 0;
 }
