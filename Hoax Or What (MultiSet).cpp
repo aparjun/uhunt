@@ -9,7 +9,6 @@ multiset<int> s; //multiset is used to carry duplicates
 int main() 
 {
 	int x,y;
-	auto a,b;
     while(cin>>n && n!=0)
     {
 	 sum=0;
@@ -22,8 +21,8 @@ int main()
 		 cin>>y;
 		 s.insert(y);
 	    }
-	    a=s.end();
-	    b=s.begin();
+	    auto a=s.end();
+	    auto b=s.begin();
 	    a--;//s.end() is the location after the last element
 	    sum += (*a)-(*b);
 	    s.erase(a); 
