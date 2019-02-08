@@ -12,6 +12,7 @@ int main()
   	int bat,gr,bl,x,y;
   	cin>>bat>>gr>>bl;
   	multiset<int>g,b;
+  	vector <int> 
   	for(int j=0;j<gr;j++)
   	{
   		cin>>x;
