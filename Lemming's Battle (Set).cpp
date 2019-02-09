@@ -1,5 +1,6 @@
 #include <iostream>
 #include <set>
+#include <vector>
 
 using namespace std;
 
@@ -12,7 +13,7 @@ int main()
   	int bat,gr,bl,x,y;
   	cin>>bat>>gr>>bl;
   	multiset<int>g,b;
-  	vector <int> 
+  	
   	for(int j=0;j<gr;j++)
   	{
   		cin>>x;
@@ -23,36 +24,49 @@ int main()
   		cin>>x;
   		b.insert(x);
   	}
-  	auto p=g.begin(),q=b.begin();
+  	
+  	int size;
   	while(!g.empty() && !b.empty())
   	{
-  		p=g.begin();
-  		q=b.begin();
-  		if(*p>*q)
+  		vector <int> k,l;
+  		size=min(bat,(int)min(g.size(),b.size()));
+  		for(int j=0;j<size;j++)
   		{
+  		  auto p=g.end(),q=b.end();
+  		  p--;
+  		  q--;
+  		  if(*p>*q)
+  		  {
   			y=(*p)-(*q);
   			g.erase(p);	
   			b.erase(q);
-  			g.insert(y);
-  		}
-  		else
-  		{
+  			k.push_back(y);
+  		  }
+  		  else
+  		  {
   			if(*p<*q)
   			{
   			   y=(*q)-(*p);
   			   b.erase(q);
   			   g.erase(p);
-  			   b.insert(y);
+  			   l.push_back(y);
   			}
   			else
   			{
   			    g.erase(p);
   			    b.erase(q);
   			}
+  		  }
   		}
-  	}
-  	p=g.begin();
-  	q=b.begin();
+  		for(auto j=k.begin();j!=k.end();j++)
+  		{
+  			g.insert(*j);
+  		}
+  		for(auto j=l.begin();j!=l.end();j++)
+  		{
+  			b.insert(*j);
+  		}
+  	  }
   	if(g.empty() && b.empty())
   	{
   		cout<<"green and blue died\n";
@@ -62,23 +76,24 @@ int main()
   		if(g.empty())
   		{
   			cout<<"blue wins\n";
-  			while(q!=b.end())
+  			for(multiset<int>::reverse_iterator it=b.rbegin(); it!=b.rend(); it++)
   			{
-  				cout<<*q<<"\n";
-  				q++;
+		     cout << *it << '\n';
   			}
   		}
   		else
   		{
   			cout<<"green wins\n";
-  			while(p!=g.end())
+  			for(multiset<int>::reverse_iterator it=g.rbegin(); it!=g.rend(); it++)
   			{
-  				cout<<*p<<"\n";
-  				p++;
+		     cout << *it << '\n';
   			}
   		}
   	}
-  	cout<<endl;
+  	if(t>0)
+  	{
+  	 cout<<endl;
+  	}
   }
 	return 0;
 }
