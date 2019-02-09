@@ -3,62 +3,68 @@
 #include <stack>
 using namespace std;
 
-stack <int> P;
-queue <int> C[105];
+stack <int> stk;
+queue <int> que[105];
 
-int t,n,s,q;
-int ax,ay,p,g,r,est;
+int test,n,s,q;
+int x,y,p,g,t,f;
 
 
-int main(){
+int main()
+{
 
-    cin>>t;
-    while(t--)
+    cin>>test;
+    while(test--)
     {
-        cin>>n>>s>>q;
+        cin>>n>>s>>q; //n is number of stations, s is carrier capacity, q is queue capacity 
         for(int i=0;i<n;i++)
         {
-            cin>>ax;
-            while(ax--)
+            cin>>x; //number of cargo in ith queue
+            while(x--)
             {
-                cin>>ay;
-                C[i].push(ay);
+                cin>>y;
+                que[i].push(y); //cargo added to queue
                 g++;
             }
         }
+  
+        f=t=p=0;
 
-        est=r=p=0;
-
-        while(g>0){
-            if(est){
-                r+=2;
+        while(g>0)
+        {
+            if(f==1)
+            {
+                t=t+2;
             }
-            est=1;
-            while(  (!P.empty()&&C[p].size()<q) || (!P.empty() &&P.top()==p+1)   ){
-                if(P.top()==p+1){
-                    P.pop();
+            
+            f=1;
+            while( (!stk.empty()&&que[p].size()<q) || (!stk.empty()&&stk.top()==p+1) )
+            {
+                if(stk.top()==p+1)// The required box is same as station number (p+1)
+                {
+                    stk.pop();
                     g--;
                 }
-                else{
-                    C[p].push(P.top());
-                    P.pop();
+                else
+                {
+                    que[p].push(stk.top());
+                    stk.pop();
                 }
-                r++;
+                t++;
             }
 
-            while(P.size()<s && !C[p].empty()){
-                P.push(C[p].front());
-                C[p].pop();
-                r++;
+            while(stk.size()<s && !que[p].empty())
+            {
+                stk.push(que[p].front());
+                que[p].pop();
+                t++;
             }
-
             p++;
-            p%=n;
+            p=p%n; //p=n means 1 round. For next round p=1
 
 
         }
-
-        printf("%d\n",r);
+        cout<<t<<endl;
 
     }
 
