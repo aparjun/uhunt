@@ -1,36 +1,34 @@
 #include <iostream>
 #include <map>
+
 using namespace std;
 
+int t, n, x, ans, cnt, block;
+map<int, int> m;
 int main() 
 {
-	int t;
-	cin>>t;
-	while(t--)
-	{
-		int n,m,c=0,max=0;
-		cin>>n;
-		map<int, int> num;
-		map<int, int>:: iterator i;
-		for(int j=0;j<n;j++)
-		{
-			cin>>m;
-			if(num[m]==0)
-			{
-				num[m]++;
-				c++;
-				if(max<c)
-				{
-					max=c;
-				}
-			}
-			else
-			{
-				num.clear();
-				c=0;
-			}
-		}
-		cout<<max<<endl;
+    cin>>t;
+    while(t--)
+    {
+	 cin>>n;
+	 m.clear();
+	 ans=0, cnt=0, block=0;
+	 for(int i=1;i<=n;i++)
+	 {
+	    cin>>x;
+	    int lx = m[x];
+	    if(lx != 0) 
+	    {
+		 if(block<lx)
+		 {
+		 	block=lx;
+		 }
+		 cnt=i-block-1;
+	    }
+	    cnt++;
+	    m[x]=i;
+	    ans=max(ans, cnt);
 	}
-	return 0;
+	cout<<ans<<'\n';
+    }
 }
