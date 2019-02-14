@@ -38,7 +38,7 @@ int main()
             }
             
             f=1;
-            while( (!stk.empty()&&que[p].size()<q) || (!stk.empty()&&stk.top()==p+1) )
+            while( (!stk.empty()&&que[p].size()<q) || (!stk.empty()&&stk.top()==p+1) ) // Unloading the stack
             {
                 if(stk.top()==p+1)// The required box is same as station number (p+1)
                 {
@@ -53,7 +53,7 @@ int main()
                 t++;
             }
 
-            while(stk.size()<s && !que[p].empty())
+            while(stk.size()<s && !que[p].empty()) //Loading the stack
             {
                 stk.push(que[p].front());
                 que[p].pop();
