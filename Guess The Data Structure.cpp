@@ -75,9 +75,9 @@ int main()
 			cout << "stack" << endl;
 		}
 		else if (st==0 && qu==1 && pr==0)
-	    {
+	        {
 			cout << "queue" << endl;
-	    }
+	        }
 		else if (st==0 && qu==0 && pr==1)
 		{
 			cout << "priority queue" << endl;
