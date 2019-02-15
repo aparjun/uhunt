@@ -1,45 +1,32 @@
 #include <iostream>
-#include <numeric>
+#include <map>
 using namespace std;
 
 int main()
 {
 	int t,i=0;
+	map<char,int>m;
 	cin>>t;
 	while(i<t)
 	{ 
-	 string str;
-	 float n; 	
-	 char a;
-	 int k,l,m,ar[500]={0},br[500]={0};
+	 double n; 	
+	 char c;
+	 int k,p;
 	 cin>>k;
 	 for(int j=0;j<k;j++)
 	 {
-	 	cin>>a;
-	 	l=a;
-	 	cin>>m;
-	 	ar[l]=m;
+	 	cin>>c;
+	 	cin>>p;
+	 	m[c]=p;
 	 }
 	 cin>>k;
-	 getline(cin,str);
-	 for(int j=0;j<k;j++)
+	 while(cin>>c)
 	 {
-	 	getline(cin,str);
-	 	for(int f=0;f<str.size();f++)
+	 	if(c!=' ' || c!='\n') 
 	 	{
-	 		a=str[f];
-	 		if(a!=' ')
-	 	    {
-	 	     l=a;
-	 	     br[l]++;
-	 	    }
+	 	 n+= m[c];
 	 	}
 	 }
-	 for(int j=0;j<500;j++)
-	 {
-	  br[j]=br[j]*ar[j];
-	 }
-	 n=accumulate(br, br+500, 0);
 	 n=n/100;
 	 printf("%.2f",n);
 	 cout<<"$"<<endl;
