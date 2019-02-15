@@ -15,7 +15,7 @@ int main()
         a=0,b=0;
         while(n>0)
         {
-            if(1&n) 
+            if(1&n) //to check if last bit is 1 
             {
                 if(j%2) //for alternatingly adding 1s to a and b
                 {
