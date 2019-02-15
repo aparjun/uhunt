@@ -5,11 +5,13 @@ using namespace std;
 int main()
 {
 	int t,i=0;
-	map<char,int>m;
 	cin>>t;
 	while(i<t)
 	{ 
-	 double n; 	
+	 map<char,int>m;
+	 map <char,int>::iterator it;
+	 double n;
+	 string str;
 	 char c;
 	 int k,p;
 	 cin>>k;
@@ -20,11 +22,17 @@ int main()
 	 	m[c]=p;
 	 }
 	 cin>>k;
-	 while(cin>>c)
+	 getline(cin,str);
+	 for(int i=0;i<k;i++)
 	 {
-	 	if(c!=' ' || c!='\n') 
+	 	getline(cin,str);
+	 	for(int j=0;j<str.size();j++)
 	 	{
-	 	 n+= m[c];
+	 		it=m.find(str[j]);
+	 		if(it!=m.end())
+	 		{
+	 			n+=it->second;
+	 		}
 	 	}
 	 }
 	 n=n/100;
