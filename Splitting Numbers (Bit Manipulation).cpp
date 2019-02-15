@@ -17,13 +17,13 @@ int main()
         {
             if(1&n) 
             {
-                if(j%2) 
+                if(j%2) //for alternatingly adding 1s to a and b
                 {
-                    b=b|1<<i;
+                    b=b|(1<<i); //shift 1 to left i times and add to b
                 } 
                 else 
                 {
-                    a=a|1<<i; 
+                    a=a|(1<<i); 
                 }
                 j++;
             }
