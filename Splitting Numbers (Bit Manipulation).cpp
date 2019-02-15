@@ -15,11 +15,11 @@ int main()
         a=0,b=0;
         while(n>0)
         {
-            if(1&n) //to check if last bit is 1 
+            if(1&n) //to check if last bit of n is 1 
             {
                 if(j%2) //for alternatingly adding 1s to a and b
                 {
-                    b=b|(1<<i); //shift 1 to left i times and add to b
+                    b=b|(1<<i); //shift 1 to left i times and add to b ("or" acts as addition)
                 } 
                 else 
                 {
@@ -28,7 +28,7 @@ int main()
                 j++;
             }
             i++;
-            n=n>>1;
+            n=n>>1; //remove last bit to get the next (second last) bit
         }
         cout<<a<<" "<<b<<"\n";
     }
