@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cmath>
+#include <iomanip>
 using namespace std;
 
 int main() 
@@ -18,11 +20,11 @@ int main()
 		  {
 		   break;
 		  }
-		  a=ar[i]/(int)pow(10,n/2);  //First half
-		  b=ar[i]%(int)pow(10,n/2);  //Second half
-          if(pow((a+b),2)==ar[i])    //Squaring a+b
+		  a=ar[j]/(int)pow(10,n/2);  //First half
+		  b=ar[j]%(int)pow(10,n/2);  //Second half
+          if(pow((a+b),2)==ar[j])    //Squaring a+b
           {
-          	 cout<<setw(n)<<setfill('0')<<ar[i]<<endl; //Setfill for numbers like 0001
+          	 cout<<setw(n)<<setfill('0')<<ar[j]<<endl; //Setfill for numbers like 0001
           }
 		}
 	}
