@@ -1,14 +1,16 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
+using namespace std;
+
 int main()
 {
   int t,m,d,k,n;
   long long c[30];
   long long ans;
   cin>>t;
-  while (t--) 
+  while(t--) 
   {
-    ans = 0;
+    ans=0;
     cin>>m;
     for(int i=0;i<=m;i++)
     {
