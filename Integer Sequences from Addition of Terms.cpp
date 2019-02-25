@@ -8,7 +8,8 @@ int main()
 	cin>>t;
 	while(t--)
 	{
-		int m,d,k,ar[20],s=0;
+		int m,d,k,ar[20];
+		long long int r,s=0;
 		cin>>m;
 		for(int i=0;i<=m;i++)
 		{
@@ -19,15 +20,16 @@ int main()
 		for(n=1;;n++)
 		{
 			prev=p;
-                        p+=n*d;
-                       if(prev<k && k<=p)
+            p+=n*d;
+            if(prev<k && k<=p)
             {
             	break;
             }
 		}
 		for(int i=0;i<=m;i++)
 		{
-			s=s+ar[i]*(int)pow(n,i);
+			r=pow(n,i);
+			s=s+ar[i]*r;
 		}
 		cout<<s<<endl;
 	}
