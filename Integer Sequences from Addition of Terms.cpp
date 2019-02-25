@@ -15,12 +15,15 @@ int main()
 			cin>>ar[i];
 		}
 		cin>>d>>k;
-		int p=0,prev=0,n=1;
-		while(prev<k && k<=p)
+		int p=0,prev=0,n;
+		for(n=1;;n++)
 		{
 			prev=p;
-            p+=n*d;
-            n++;
+                        p+=n*d;
+                       if(prev<k && k<=p)
+            {
+            	break;
+            }
 		}
 		for(int i=0;i<=m;i++)
 		{
