@@ -1,5 +1,4 @@
 #include <iostream>
-#include <set>
 using namespace std;
 
 int main()
@@ -8,17 +7,26 @@ int main()
 	cin>>t;
 	while(t--)
 	{
-		set<int>s;
-		int a,b,c,x,q;
+		int a,b,c,x,q,f=0;
+		int ar[5];
 		cin>>a>>b>>c;
 		q=a*a-c;
 		q=q/2;
-		for(x=0;x<=10000;x++)
+		for(x=-10000;x<=10000;x++)
 		{
 			if(-1*x*x*x+x*x*a-x*q+b==0)
 			{
-				cout<<x<<" ";
+			    ar[f]=x;
+				f++;
 			}
+		}
+		if(f!=3)
+		{
+			cout<<"No solution.";
+		}
+		else
+		{
+			cout<<ar[0]<<" "<<ar[1]<<" "<<ar[2];
 		}
 		cout<<endl;
 	}
