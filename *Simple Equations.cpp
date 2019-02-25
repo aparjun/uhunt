@@ -14,7 +14,7 @@ int main()
 		q=q/2;
 		for(x=-10000;x<=10000;x++)
 		{
-			if(-1*x*x*x+x*x*a-x*q+b==0)
+			if(-1*x*x*x+x*x*a-x*q+b==0) //Simplified equation by solving the given 3 equations
 			{
 			    ar[f]=x;
 				f++;
