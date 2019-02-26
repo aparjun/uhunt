@@ -10,9 +10,9 @@ int main()
 		while(n>=k)
 		{
 			c=c+(n/k);
-			n=(n/k)+(n%k);  // Or use formula n+(n-1)/(k-1)
+			n=(n/k)+(n%k);  
 		}
-		cout<<c<<endl;
+		cout<<c<<endl;     // Or use formula n+(n-1)/(k-1)
 	}
 	return 0;
 }
