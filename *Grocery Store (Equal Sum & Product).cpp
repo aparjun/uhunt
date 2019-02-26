@@ -1,9 +1,11 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main() 
 {
-	float a,b,c,p1,p2,p3,p4;
+	int a,b,c,d,e;
+	float p1,p2,p3,p4;
 	for(p1=1;p1<2000;p1++)
 	{
 		if(pow(p1,4)>2*pow(10,9))
@@ -22,7 +24,7 @@ int main()
 		     {
 			    break;
 		     }
-		     b=p1*p2*p3
+		     b=p1*p2*p3;
              c=1000000;
              if(b==c)
              {
@@ -36,8 +38,7 @@ int main()
              {
                continue;
              }
-             cout<<p1/100<<" "<<p2/100<<" "<<p3/100<<" "<<p4/100<<"\n";
-             
+             printf("%.2f %.2f %.2f %.2f\n",p1/100,p2/100,p3/100,p4/100);
 		    }
 		}
 	}
