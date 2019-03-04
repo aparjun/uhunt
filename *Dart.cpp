@@ -5,15 +5,15 @@ using namespace std;
 int main() 
 {
 	set<int>s;
-	for(int i=1;i<=3;i++)
-	{
-		for(int j=1;j<=20;j++)
-		{
-			s.insert(i*j);
-		}
+	for(int i=0;i<=20;i++)
+    {
+			s.insert(i);
+			s.insert(2*i);
+			s.insert(3*i);
 	}
+	s.insert(50);
 	int n;
-	while(cin>>n)
+	while(cin>>n && n>0)
 	{
 		int p=0,c=0;
 		for(auto i=s.begin();i!=s.end();i++)
@@ -25,7 +25,7 @@ int main()
 			       if(*i+*j+*k==n)
 			       {
 			       	p++;
-			       	if(i<=j&&j<=k)
+			       	if(*i<=*j&&*j<=*k)
 			       	{
 			       		c++;
 			       	}
@@ -39,8 +39,8 @@ int main()
 		}
 		else
 		{
-			cout<<"NUMBER OF COMBINATIONS THAT SCORES "<<n<<" IS"<<c<<"\n";
-			cout<<"NUMBER OF PERMUTATIONS THAT SCORES "<<n<<" IS"<<p<<"\n";
+			cout<<"NUMBER OF COMBINATIONS THAT SCORES "<<n<<" IS "<<c<<".\n";
+			cout<<"NUMBER OF PERMUTATIONS THAT SCORES "<<n<<" IS "<<p<<".\n";
 		}
 		cout<<"**********************************************************************\n";
 	}
