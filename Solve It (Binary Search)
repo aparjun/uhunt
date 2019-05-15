@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int p,q,r,s,t,u;
+
+double eq( double x)
+{
+	return p*exp(-x)+q*sin(x)+r*cos(x)+s*tan(x)+t*x*x+u;
+}
+
+double search()
+{
+	double n,low=0,hi=1;
+	while(low+0.00000001<hi)
+	{
+		n=(low+hi)/2;
+		if(eq(n)*eq(hi)<=0)
+		{
+			low=n;
+		}
+		else
+		{
+			hi=n;
+		}
+	}
+	return (low+hi)/2;
+}
+
+int main() 
+{
+	while(cin>>p>>q>>r>>s>>t>>u)
+	{
+      if(eq(0)*eq(1)>0)
+      {
+       cout<<"No solution";
+      } 
+      else
+      {
+       printf("%.4lf\n", search());
+      }
+    }
+	return 0;
+}
