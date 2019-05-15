@@ -33,7 +33,7 @@ int main()
 	{
       if(eq(0)*eq(1)>0)
       {
-       cout<<"No solution";
+       cout<<"No solution\n";
       } 
       else
       {
