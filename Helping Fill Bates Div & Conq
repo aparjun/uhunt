@@ -1,0 +1,47 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+	    string a,b;
+	    cin>>a;
+		int n,i=0;
+		cin>>n;
+		while(i<n)
+		{
+			cin>>b;
+			int c=0,d=0,x=0,y=0,al,bl;
+			al=strlen(a);
+			bl=strlen(b);
+			while(x<al && y<bl)
+			{
+				if(a[x]==b[y])
+				{
+					c++;
+					if(c==1)
+					{
+						d=x;
+					}
+					x++;
+					y++;
+				}
+				else
+				{
+				    x++;	
+				}
+			}
+			if(c==bl)
+			{
+			  cout<<"Matched "<<d<<" "<<x<<endl;	
+			}
+			else
+			{
+			  cout<<"Not Matched"<<endl;
+			}
+			
+			i++;
+		}
+		
+	    return 0;
+}
