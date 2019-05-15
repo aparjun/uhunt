@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <string.h>
 using namespace std;
 
 int main()
@@ -12,8 +13,8 @@ int main()
 		{
 			cin>>b;
 			int c=0,d=0,x=0,y=0,al,bl;
-			al=strlen(a);
-			bl=strlen(b);
+			al=a.length();
+			bl=b.length();
 			while(x<al && y<bl)
 			{
 				if(a[x]==b[y])
@@ -33,7 +34,7 @@ int main()
 			}
 			if(c==bl)
 			{
-			  cout<<"Matched "<<d<<" "<<x<<endl;	
+			  cout<<"Matched "<<d<<" "<<x-1<<endl;	
 			}
 			else
 			{
