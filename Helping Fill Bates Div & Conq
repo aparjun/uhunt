@@ -38,7 +38,7 @@ int main()
 			}
 			else
 			{
-			  cout<<"Not Matched"<<endl;
+			  cout<<"Not matched"<<endl;
 			}
 			
 			i++;
