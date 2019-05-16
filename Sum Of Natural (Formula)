@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+//Sum Of Natural Numbers
+
+int main()
+{
+	int n,sum=0;
+	cin>>n;
+	cout<<n*(n+1)/2<<endl;
+	return 0;
+}
