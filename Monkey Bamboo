@@ -1,0 +1,55 @@
+#include<iostream>
+ 
+using namespace std;
+ 
+int n,r[110000];
+ 
+int simul(int k) 
+{
+    int d=0;
+    for(int i=0;i<n;i++) 
+    {
+        if(r[i]-d<k)
+        {
+            d=r[i];
+        } 
+        else if(r[i]-d==k) 
+        {
+            d=r[i];
+            k--;
+        } 
+        else return -1;
+    }
+    return 1;
+}
+
+int main()
+{
+	int t,i=1;
+    cin>>t;
+    while(i<=t)
+    {
+        cin>>n;
+        for(int j=0;j<n;j++)
+        {
+            cin>>r[j];
+        }
+        int high=11000000,low=0;
+        while(low<high) 
+        {
+            if(simul(high)>=0)
+            {
+                high=low+(high-low)/2;
+            } 
+            else
+            {
+                low=high;
+                high=high+high/2;
+            }
+        }
+        cout<<"Case "<<i<<": "<<high+1<<endl;
+        i++;
+    }
+ 
+    return 0;
+}
