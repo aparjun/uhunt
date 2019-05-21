@@ -12,29 +12,29 @@ int main()
 		while(i<n)
 		{
 			cin>>b;
-			int c=0,d=0,x=0,y=0,al,bl;
+			int c=0,lo=0,hi=0,y=0,al,bl;
 			al=a.length();
 			bl=b.length();
-			while(x<al && y<bl)
+			while(hi<al && y<bl)
 			{
-				if(a[x]==b[y])
+				if(a[hi]==b[y])
 				{
 					c++;
 					if(c==1)
 					{
-						d=x;
+						lo=hi;
 					}
-					x++;
+					hi++;
 					y++;
 				}
 				else
 				{
-				    x++;	
+				    hi++;	
 				}
 			}
 			if(c==bl)
 			{
-			  cout<<"Matched "<<d<<" "<<x-1<<endl;	
+			  cout<<"Matched "<<lo<<" "<<hi-1<<endl;	
 			}
 			else
 			{
